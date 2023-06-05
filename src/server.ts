@@ -1,8 +1,10 @@
 import { Request, Response } from "express";
+import userRoutes from "./routes/users";
 
 import express from "express";
 const app = express();
 app.use(express.json());
+app.use(userRoutes);
 
 const PORTA = "3333"
 
