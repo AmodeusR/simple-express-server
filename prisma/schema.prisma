@@ -16,3 +16,15 @@ model User {
   idade Int
   criadoEm DateTime
 }
+
+model Game {
+  id String @id @default(uuid())
+  titulo String
+  genero Genre @relation(fields: [generoID], references: [genero])
+  generoID String
+}
+
+model Genre {
+  genero String @id
+  games Game[]
+}
